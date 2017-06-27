@@ -35,7 +35,7 @@ Es igual al último valor regresado por los reducers del store.
 
 Despacha una acción. Esta es la única forma de realizar un cambio de estado.
 
-La función función reductora es ejecutada por el resultado de [`getState()`](#getState) y el `action` indicado de forma síncrona. El valor devuelto es considerado el siguiente estado. Va a ser devuelto por [`getState()`](#getState) desde ahora, y las funciones escuchando los cambios van a ser inmediatamente notificadas.
+La función reductora es ejecutada por el resultado de [`getState()`](#getState) y el `action` indicado de forma síncrona. El valor devuelto es considerado el siguiente estado. Va a ser devuelto por [`getState()`](#getState) desde ahora, y las funciones escuchando los cambios van a ser inmediatamente notificadas.
 
 >##### Una nota para usuarios de Flux
 >Si intentas llamar a `dispatch` desde dentro de un [reducer](../glosario.md#reducer), va a tirar un error diciendo "Los reducers no deben despachar acciones." Esto es similar al error de Flux de "No se puede despachar en medio de un despacheo", pero no causa los problemas asociados con este. En Flux, despachar esta prohibido mientras los Store están manejando las acciones y emitiendo las actualizaciones. Esto es una lástima porque hace imposible despachar acciones desde el ciclo de vida del componente u otras partes benignas.
@@ -56,7 +56,7 @@ La función función reductora es ejecutada por el resultado de [`getState()`](#
 
 De todas formas, si envuelves [`createStore`](./create-store.md) con [`applyMiddleware`](./apply-middleware.md), el middleware puede interpretar acciones de otra forma, y proveer soporta para despachar [acciones asíncronas](../glosario.md#acción-asíncrona). Las acciones asíncronas normalmente son Promises, Observables, o thunks.
 
-Los middlewares son creador por la comunidad y no vienen incluidos en Redux por defecto. Necesitas explícitamente instalar paquetes como [redux-thunk](https://github.com/gaearon/redux-thunk) o [redux-promise](https://github.com/acdlite/redux-promise) para usarlos. Probablemente también crees tus propios middlewares.
+Los middlewares son creados por la comunidad y no vienen incluidos en Redux por defecto. Necesitas explícitamente instalar paquetes como [redux-thunk](https://github.com/gaearon/redux-thunk) o [redux-promise](https://github.com/acdlite/redux-promise) para usarlos. Probablemente también crees tus propios middlewares.
 
 Para aprender como describir llamadas asíncronas a un API, leer el estado actual dentro de creadores de acciones o realizar efectos secundarios, mira los ejemplos de [`applyMiddleware`](./applyMiddleware.md).
 
